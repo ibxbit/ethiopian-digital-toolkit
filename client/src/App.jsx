@@ -47,18 +47,19 @@ const LandingPage = () => {
   const otherTools = filteredTools.filter(tool => !favorites.includes(tool.key));
 
   // Title split for color and effect
-  const title1 = 'Ethiopian Digital';
-  const title2 = 'Toolkit';
+  const LANDING_TITLE = 'Ethiopian Digital Toolkit';
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative z-10">
       <style>{`
         .pop-title span {
           display: inline-block;
-          transition: transform 0.25s cubic-bezier(.4,2,.6,1), color 0.25s;
+          transition: transform 0.25s cubic-bezier(.4,2,.6,1), text-shadow 0.25s;
         }
         .pop-title span:hover {
           transform: translateY(-8px) scale(1.18) rotate(-3deg);
+          text-shadow: 0 0 12px #ec4899, 0 0 24px #ec4899;
+          color: #ec4899 !important;
         }
         .pop-title .pink {
           color: #ec4899;
@@ -137,7 +138,11 @@ const LandingPage = () => {
           </button>
         </div>
         <h1 className="text-2xl sm:text-4xl font-extrabold mb-6 pop-title select-none">
-          {t('appTitle')}
+          {LANDING_TITLE.split('').map((char, i) => (
+            <span key={i} className="hover:text-pink-500 cursor-pointer">
+              {char === ' ' ? '\u00A0' : char}
+            </span>
+          ))}
         </h1>
         <div className="w-full flex justify-center mb-8">
           <form className="relative w-full max-w-lg flex gap-2" onSubmit={e => e.preventDefault()}>
