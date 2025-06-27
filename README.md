@@ -81,7 +81,8 @@ You may not use, copy, or distribute any part of this code without explicit perm
 ---
 
 ## 📸 Screenshots
-_Add screenshots here if you like!_
+![image](https://github.com/user-attachments/assets/7b6e8a7a-ab8b-40e1-adc7-c8eed7bad4a1)
+
 
 ---
 
