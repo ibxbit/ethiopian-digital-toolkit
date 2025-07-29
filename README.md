@@ -1,19 +1,19 @@
-# Ethiopian Digital Toolkit
+# Ethiopian Digital Toolkit 
 
-A modern, multi-tool web application for Ethiopian users and the world! Includes date conversion, exchange rates, time zone conversion, holiday calendar, and QR code generation—all with beautiful UI, mobile support, and localization in Amharic, English, Afaan Oromo, and Tigrinya.
-
+A modern, multi tool web application for Ethiopian users and the world. Includes date conversion, exchange rates, time zone conversion, holiday calendar, and QR code generation all with beautiful UI, mobile support, and localization in Amharic, English, Afaan Oromo, and Tigrinya.
+  
 ---
 
 ## ✨ Features
 - **Date Converter:** Ethiopian ↔ Gregorian calendar conversion, with calendar picker and recent history.
-- **Exchange Rate:** Live currency conversion and 30-day historical chart.
+- **Exchange Rate:** Live currency conversion and 30 day historical chart.
 - **Time Zone Converter:** Convert times between zones, with animated clocks and swap button.
 - **Holiday Calendar:** View holidays for Ethiopia and other countries, with festive icons and descriptions.
-- **QR Code Generator:** Generate QR codes for text/links, with custom colors.
+- **QR Code Generator:** Generate QR codes for text or links, with custom colors.
 - **Favorites:** Mark your favorite tools for quick access.
-- **PWA:** Installable, offline-capable app.
+- **PWA:** Installable, offline capable app. 
 - **Localization:** Full support for English, Amharic, Afaan Oromo, and Tigrinya.
-- **Mobile Responsive & Accessible:** Works great on all devices and for all users.
+- **Mobile Responsive & Accessible:** Works great on all devices and for all users.  
 
 ---
 
@@ -21,13 +21,13 @@ A modern, multi-tool web application for Ethiopian users and the world! Includes
 - **Frontend:** React, Vite, Tailwind CSS, react-i18next, Chart.js
 - **Backend:** NestJS, TypeScript, Axios
 - **PWA:** Vite PWA plugin
-
+ 
 ---
 
 ## 🌍 Language Support
-- English (EN)
+- English (EN)   
 - Amharic (አማ)
-- Afaan Oromo (OM)
+- Afaan Oromo (OM) 
 - Tigrinya (ትግ)
 
 ---
