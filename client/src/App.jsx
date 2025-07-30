@@ -1,4 +1,4 @@
-// App.jsx (Revised for precise vertical alignment)
+// src/App.jsx
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
@@ -31,7 +31,7 @@ const LandingPage = () => {
   });
 
   useEffect(() => {
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+      localStorage.setItem('favorites', JSON.stringify(favorites));
   }, [favorites]);
 
   const toggleFavorite = (key) => {
@@ -51,7 +51,8 @@ const LandingPage = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col items-center pt-10 pb-20 px-4 relative z-10 w-full max-w-7xl mx-auto">
+    // Main LandingPage container: w-full to allow card sections to stretch
+    <div className="min-h-screen flex flex-col items-center pt-10 pb-20 px-4 relative z-10 w-full mx-auto">
       {/* Inline styles */}
       <style>{`
         .pop-title span {
@@ -81,17 +82,25 @@ const LandingPage = () => {
         .pop-title .blue:hover, .pop-title .black:hover {
           color: #ec4899 !important;
         }
+
+        /* *** KEY STYLES FOR TOOL CARDS *** */
         .tool-btn {
-          transition: box-shadow 0.25s, border 0.25s, background 0.25s, transform 0.18s;
-          background-color: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(5px);
+          transition: box-shadow 0.3s ease-out, border 0.3s ease-out, background 0.3s ease-out, transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+          background-color: white; /* Solid white background for distinct cards */
+          border: 2px solid #e0e0e0; /* Slightly thicker and more visible default border */
+          align-items: flex-start; /* Ensure content is always top-aligned */
+          text-align: left; /* Ensure text is left-aligned */
+          cursor: pointer; /* Clear indication of clickability */
+          box-shadow: 0 4px 12px 0 rgba(0,0,0,0.05); /* Subtle default shadow */
         }
         .tool-btn:hover {
-          box-shadow: 0 8px 32px 0 rgba(236,72,153,0.18), 0 1.5px 8px 0 rgba(37,99,235,0.10);
-          border-color: #ec4899;
-          background: linear-gradient(90deg, #fce7f3 0%, #dbeafe 100%);
-          transform: scale(1.045) translateY(-2px);
+          box-shadow: 0 12px 48px 0 rgba(236,72,153,0.28), 0 3px 15px 0 rgba(37,99,235,0.18); /* Stronger, more vibrant shadow on hover */
+          border-color: #ec4899; /* Pink border on hover */
+          background: linear-gradient(90deg, #fce7f3 0%, #dbeafe 100%); /* Gradient background on hover */
+          transform: scale(1.05) translateY(-5px); /* More pronounced lift on hover */
         }
+        /* *** END KEY STYLES FOR TOOL CARDS *** */
+
         .search-btn {
           background: linear-gradient(90deg, #ec4899 0%, #2563eb 100%);
           color: #fff;
@@ -142,8 +151,8 @@ const LandingPage = () => {
         </button>
       </div>
 
-      {/* Main Page Title */}
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-4 pop-title select-none mt-16">
+      {/* Main Page Title (now centered within the full width) */}
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-center mb-4 pop-title select-none mt-16 max-w-7xl">
         {MAIN_PAGE_TITLE.split('').map((char, i) => (
           <span key={i} className="hover:text-pink-500 cursor-pointer">
             {char === ' ' ? '\u00A0' : char}
@@ -151,13 +160,13 @@ const LandingPage = () => {
         ))}
       </h1>
 
-      {/* Main Page Tagline */}
+      {/* Main Page Tagline (now centered within the full width) */}
       <p className="text-lg sm:text-xl text-gray-600 text-center mb-10 max-w-xl mx-auto">
         {MAIN_PAGE_TAGLINE}
       </p>
 
-      {/* Search Bar Container: Reduced bottom margin significantly */}
-      <div className="w-full flex justify-center mb-4"> {/* Changed mb-10 to mb-4 */}
+      {/* Search Bar Container (retains max-w-6xl for contrast) */}
+      <div className="w-full flex justify-center mb-4">
         <form className="relative w-full max-w-6xl flex gap-6" onSubmit={e => e.preventDefault()}>
           <input
             type="text"
@@ -174,22 +183,23 @@ const LandingPage = () => {
         </form>
       </div>
 
-      {/* Favorites section - Changed pt-8 to pt-0 and added mt-6 to its container for a small consistent gap*/}
+      {/* Favorites section - full width container */}
       {favoriteTools.length > 0 && (
-        <div className="w-full mb-8 max-w-5xl mt-6"> {/* Adjusted mt-0 pt-8 to mt-6 */}
-          <h2 className="text-xl font-bold text-pink-600 mb-4 text-left px-4">
+        <div className="w-full mb-8 mt-6">
+          <h2 className="text-xl font-bold text-pink-600 mb-4 text-left px-4 max-w-7xl mx-auto">
             {t('favorites')}
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 w-full px-4">
+          {/* Grid setup for further decreased card width (5 on XL, 6 on 2XL) */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-6 sm:gap-8 w-full px-4">
             {favoriteTools.map(tool => (
               <div key={tool.key} className="relative">
                 <button
-                  className="tool-btn flex flex-col items-start p-4 sm:p-6 rounded-xl border border-gray-200 shadow w-full focus:outline-none focus:ring-2 focus:ring-2 focus:ring-pink-200 focus-visible:ring-4 focus-visible:ring-pink-300"
+                  className="tool-btn flex flex-col items-start p-8 sm:p-10 rounded-2xl border border-gray-300 shadow w-full focus:outline-none focus:ring-2 focus:ring-pink-200 focus-visible:ring-4 focus-visible:ring-pink-300 h-64"
                   onClick={() => navigate(`/${tool.key}`)}
                   aria-label={tool.label}
                 >
-                  <span className="text-lg sm:text-2xl mb-2 font-semibold text-gray-800">{tool.label}</span>
-                  <span className="text-gray-500 text-xs sm:text-sm">{tool.desc}</span>
+                  <span className="text-2xl sm:text-3xl md:text-4xl mb-2 font-semibold text-gray-800">{tool.label}</span>
+                  <span className="text-base sm:text-lg text-gray-500">{tool.desc}</span>
                 </button>
                 <button
                   aria-label={favorites.includes(tool.key) ? `Unfavorite ${tool.label}` : `Favorite ${tool.label}`}
@@ -204,21 +214,22 @@ const LandingPage = () => {
           </div>
         </div>
       )}
-      {/* Other tools section - Adjusted mt-0 and conditional pt-8. Now just mt-6 for consistency */}
-      <div className="w-full max-w-5xl mt-6"> {/* Adjusted mt-0 and conditional pt-8 to mt-6 */}
-        <h2 className="text-xl font-bold text-gray-700 mb-4 text-left px-4">
+      {/* Other tools section - full width container */}
+      <div className="w-full mt-6">
+        <h2 className="text-xl font-bold text-gray-700 mb-4 text-left px-4 max-w-7xl mx-auto">
           {favoriteTools.length > 0 ? t('otherTools') : t('allTools')}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 w-full px-4">
+        {/* Grid setup for further decreased card width (5 on XL, 6 on 2XL) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6 gap-6 sm:gap-8 w-full px-4">
           {otherTools.map(tool => (
             <div key={tool.key} className="relative">
               <button
-                className="tool-btn flex flex-col items-start p-4 sm:p-6 rounded-xl border border-gray-200 shadow w-full focus:outline-none focus:ring-2 focus:ring-pink-200 focus-visible:ring-4 focus-visible:ring-pink-300"
+                className="tool-btn flex flex-col items-start p-8 sm:p-10 rounded-2xl border border-gray-300 shadow w-full focus:outline-none focus:ring-2 focus:ring-pink-200 focus-visible:ring-4 focus-visible:ring-pink-300 h-64"
                 onClick={() => navigate(`/${tool.key}`)}
                 aria-label={tool.label}
               >
-                <span className="text-lg sm:text-2xl mb-2 font-semibold text-gray-800">{tool.label}</span>
-                <span className="text-gray-500 text-xs sm:text-sm">{tool.desc}</span>
+                <span className="text-2xl sm:text-3xl md:text-4xl mb-2 font-semibold text-gray-800">{tool.label}</span>
+                <span className="text-base sm:text-lg text-gray-500">{tool.desc}</span>
               </button>
               <button
                 aria-label={favorites.includes(tool.key) ? `Unfavorite ${tool.label}` : `Favorite ${tool.label}`}
