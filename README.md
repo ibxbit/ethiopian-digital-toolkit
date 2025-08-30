@@ -24,7 +24,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
   
 --- 
 
-## 🌍 Language Support
+## 🌍 Language Support 
 - English (EN)    
 - Amharic (አማ)
 - Afaan Oromo (OM) 
