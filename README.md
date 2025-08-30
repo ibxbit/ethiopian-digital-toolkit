@@ -10,7 +10,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
 - **Time Zone Converter:** Convert times between zones, with animated clocks and swap button.
 - **Holiday Calendar:** View holidays for Ethiopia and other countries, with festive icons and descriptions.
 - **QR Code Generator:** Generate QR codes for text or links, with custom colors. 
-- **Favorites:** Mark your favorite tools for quick access.
+- **Favorites:** Mark your favorite tools for quick access. 
 - **PWA:** Installable, offline capable app.   
 - **Localization:** Full support for English, Amharic, Afaan Oromo, and Tigrinya.  
 - **Mobile Responsive & Accessible:** Works great on all devices and for all users.   
