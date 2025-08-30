@@ -4,7 +4,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
   
 ---
 
-## ✨ Features
+## ✨ Features 
 - **Date Converter:** Ethiopian ↔ Gregorian calendar conversion, with calendar picker and recent history.
 - **Exchange Rate:** Live currency conversion and 30 day historical chart.
 - **Time Zone Converter:** Convert times between zones, with animated clocks and swap button.
