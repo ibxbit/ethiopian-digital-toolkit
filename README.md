@@ -23,7 +23,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
 - **PWA:** Vite PWA plugin 
    
 --- 
-
+ 
 ## 🌍 Language Support 
 - English (EN)    
 - Amharic (አማ)
