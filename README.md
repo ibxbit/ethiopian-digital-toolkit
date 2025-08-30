@@ -14,7 +14,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
 - **PWA:** Installable, offline capable app.   
 - **Localization:** Full support for English, Amharic, Afaan Oromo, and Tigrinya. 
 - **Mobile Responsive & Accessible:** Works great on all devices and for all users.  
-
+ 
 ---  
  
 ## 🛠️ Tech Stack
