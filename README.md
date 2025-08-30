@@ -1,7 +1,7 @@
 # Ethiopian Digital Toolkit 
   
 A modern, multi tool web application for Ethiopian users and the world. Includes date conversion, exchange rates, time zone conversion, holiday calendar, and QR code generation all with beautiful UI, mobile support, and localization in Amharic, English, Afaan Oromo, and Tigrinya.
-  
+   
 ---
 
 ## ✨ Features 
