@@ -19,7 +19,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
  
 ## 🛠️ Tech Stack  
 - **Frontend:** React, Vite, Tailwind CSS, react-i18next, Chart.js 
-- **Backend:** NestJS, TypeScript, Axios  
+- **Backend:** NestJS, TypeScript, Axios   
 - **PWA:** Vite PWA plugin 
    
 --- 
