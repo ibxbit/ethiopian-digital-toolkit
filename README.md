@@ -13,7 +13,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
 - **Favorites:** Mark your favorite tools for quick access.    
 - **PWA:** Installable, offline capable app.      
 - **Localization:** Full support for English, Amharic, Afaan Oromo, and Tigrinya.    
-- **Mobile Responsive & Accessible:** Works great on all devices and for all users.     
+- **Mobile Responsive & Accessible:** Works great on all devices and for all users.      
   
 ---    
     
