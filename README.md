@@ -15,7 +15,7 @@ A modern, multi tool web application for Ethiopian users and the world. Includes
 - **Localization:** Full support for English, Amharic, Afaan Oromo, and Tigrinya.    
 - **Mobile Responsive & Accessible:** Works great on all devices and for all users.       
   
----    
+---     
     
 ## 🛠️ Tech Stack     
 - **Frontend:** React, Vite, Tailwind CSS, react-i18next, Chart.js    
